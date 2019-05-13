@@ -91,8 +91,6 @@ define(function(require) {
     },
 
     moveToComponent: function(event) {
-      if (event && event.preventDefault)
-        event.preventDefault();
       var currentComponentSelector = '.' + $(event.currentTarget).attr('data-page-level-progress-id');
       var $currentComponent = $(currentComponentSelector);
       Adapt.navigateToElement(currentComponentSelector, {
@@ -226,7 +224,7 @@ define(function(require) {
             Adapt.trigger('contents:componentComplete');
             $($PlpItem).removeClass('contents-progress-indicator-incomplete').addClass('contents-progress-indicator-complete');
             if (circleProgress) {
-
+              if($('.contents-page-title-progress:eq(' + circleNumber + ')').length === 0) return;
               $('.contents-page-title-progress:eq(' + circleNumber + ')').circleProgress('value', context.getPageProgress(pages[circleNumber].contentObject));
             }
 
@@ -291,6 +289,7 @@ define(function(require) {
       } else {
         $div = $('.' + entry._id).find('.component-inner');
       }
+      if($($div).length === 0) return false;
       var hidden = $($div).closest('.block-inner').css('visibility') === 'hidden';
       var elementTop = $($div).offset().top;
       var elementBottom = elementTop + $($div).outerHeight();
