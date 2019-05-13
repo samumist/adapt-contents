@@ -146,10 +146,12 @@ define(function(require) {
 
       _.each(pages, function(page, index) {
         var completion = completionCalculations.calculateCompletion(page.contentObject);
+        var completed = completion.nonAssessmentCompleted + completion.assessmentComponentsCompleted;
+        var total = completion.nonAssessmentTotal + completion.assessmentComponentsTotal;
         $('.contents-page-title-progress:eq(' + index + ')').circleProgress({
-          value: completion.nonAssessmentCompleted / completion.nonAssessmentTotal
+          value: completed / total
         });
-        if (completion.nonAssessmentCompleted / completion.nonAssessmentTotal == 1) {
+        if (completed / total == 1) {
           var fill = $('.contents-page-title-progress:eq(' + index + ')').data('circle-progress').size / 2;
           $('.contents-page-title-progress:eq(' + index + ')').circleProgress({
             "thickness": fill
@@ -323,7 +325,7 @@ define(function(require) {
     }
   });
 
-  Adapt.on('router:page router:menu', function() {
+  Adapt.on('pageView:postRender router:menu', function() {
     clearInterval(Adapt.contentsTimer);
   });
 
