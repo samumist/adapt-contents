@@ -146,8 +146,8 @@ define(function(require) {
 
       _.each(pages, function(page, index) {
         var completion = completionCalculations.calculateCompletion(page.contentObject);
-        var completed = completion.nonAssessmentCompleted + completion.assessmentComponentsCompleted;
-        var total = completion.nonAssessmentTotal + completion.assessmentComponentsTotal;
+        var completed = completion.nonAssessmentCompleted + completion.assessmentCompleted;
+        var total = completion.nonAssessmentTotal + completion.assessmentTotal;
         $('.contents-page-title-progress:eq(' + index + ')').circleProgress({
           value: completed / total
         });
@@ -325,7 +325,7 @@ define(function(require) {
     }
   });
 
-  Adapt.on('pageView:postRender router:menu', function() {
+  Adapt.on('router:page router:menu', function() {
     clearInterval(Adapt.contentsTimer);
   });
 
