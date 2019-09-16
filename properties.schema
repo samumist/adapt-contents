@@ -7,7 +7,7 @@
     "pageLevelProgress": {
       "type": "string",
       "required": true,
-      "default": "Page sections",
+      "default": "页面部分",
       "inputType": "Text",
       "validators": [],
       "translatable": true
@@ -15,7 +15,7 @@
     "pageLevelProgressIndicatorBar": {
       "type": "string",
       "required": true,
-      "default": "Progress bar. Select here to view your current progress, and select an item to navigate to it. You have completed ",
+      "default": "进度条。选择这里查看当前进度，并选择您要访问的导航选项。您已经完成了。",
       "inputType": "Text",
       "validators": [],
       "translatable": true
@@ -23,7 +23,7 @@
     "pageLevelProgressMenuBar": {
       "type": "string",
       "required": true,
-      "default": "You have completed ",
+      "default": "您已完成。",
       "inputType": "Text",
       "validators": [],
       "translatable": true
@@ -31,7 +31,7 @@
     "pageLevelProgressEnd": {
       "type": "string",
       "required": true,
-      "default": "You have reached the end of the list of page sections.",
+      "default": "你已经到达页面列表的底部。",
       "inputType": "Text",
       "validators": [],
       "translatable": true
@@ -39,7 +39,7 @@
     "optionalContent": {
       "type": "string",
       "required": true,
-      "default": "Optional Content",
+      "default": "可选内容",
       "inputType": "Text",
       "validators": [],
       "translatable": true
@@ -59,86 +59,87 @@
             "_contents": {
               "type": "object",
               "required": false,
-              "legend": "Contents",
+              "legend": "课程内容目录",
               "properties": {
                 "_isEnabled": {
                   "type": "boolean",
                   "required": false,
                   "default": true,
-                  "title": "Enable Contents",
+                  "title": "启用",
                   "inputType": "Checkbox"
                 },
                 "_startOpen": {
                   "type": "boolean",
                   "required": false,
                   "default": true,
-                  "title": "Open on load",
-                  "help": "On desktop, when a page loads show Contents. On mobile it's always closed",
+                  "title": "默认打开",
+                  "help": "在电脑上，加载页面后默认开启课程内容目录。在手机页面上，则不开启。",
                   "inputType": "Checkbox"
                 },
                 "_showArticleTitles": {
                   "type": "boolean",
                   "required": false,
                   "default": false,
-                  "title": "Show Articles in the Contents list",
+                  "title": "在内容目录中显示章节",
+                  "help": "通常情况下，分类目录只显示组块名称，启用此功能后'章节名称'也会显示在内容目录中。",
                   "inputType": "Checkbox"
                 },
                 "_showPagePosition": {
                   "type": "boolean",
                   "required": false,
                   "default": true,
-                  "title": "Show learners position",
-                  "help": "Highlights the current component the learner is currently on",
+                  "title": "显示学习者当前位置",
+                  "help": "在内容目录中标出学习者当前正使用的组件。",
                   "inputType": "Checkbox"
                 },
                 "_courseNavigation": {
                   "type": "object",
                   "required": false,
-                  "legend": "Course navigation",
+                  "legend": "课程导航",
                   "properties": {
                     "_isEnabled": {
                       "type": "boolean",
                       "required": false,
                       "default": true,
-                      "title": "Enable course navigation",
-                      "help": "Shows every component in an accordion format",
+                      "title": "启用",
+                      "help": "在内容目录中以手风琴折叠的方式来显示组件名称。",
                       "inputType": "Checkbox"
                     },
                     "_landingPage": {
                       "type": "boolean",
                       "required": false,
                       "default": true,
-                      "title": "Use landing page",
-                      "help": "The first accordion tab will replaced with a button to the first page",
+                      "title": "引导页",
+                      "help": "课件的第一个页面将作为课程引导介绍页。在内容目录中使用页面名称作为导航链接，只展示名称，不展示其包含的章节或组块。",
                       "inputType": "Checkbox"
                     },
                     "_allAccordions": {
                       "type": "boolean",
                       "required": false,
                       "default": false,
-                      "title": "Use component accordion",
-                      "help": "If true page titles expand and show the components on that page. Navigate to the components instead of the page",
+                      "title": "启用组件导航",
+                      "help": "当内容目录的展开时，使用组件名称作为导航链接，而不是页面名称。",
                       "inputType": "Checkbox"
                     },
                     "_scrollContentsHeight": {
                       "type": "object",
                       "required": false,
-                      "legend": "Scroll Contents height",
+                      "legend": "内容滚动高度功能",
                       "properties": {
                         "_isEnabled": {
                           "type": "boolean",
                           "required": false,
                           "default": true,
-                          "title": "Enable scroll contents height",
-                          "help": "Scroll Contents down to the top of the current page. So all components are visible below.",
+                          "title": "启用",
+                          "help": "将内容滚动到当前页面距离顶部的位置时下面的所有组件都可见。",
                           "inputType": "Checkbox"
                         },
                         "_offset": {
                           "type": "number",
                           "required": false,
                           "default": 0,
-                          "title": "Offset",
-                          "help": "Offset the height so you can see other stuff. Recommended zero or negative number",
+                          "title": "偏移高度",
+                          "help": "偏移高度，以便您可以看到其他东西。 建议零或负数",
                           "inputType": "Number",
                           "validators": ["number"]
                         }
@@ -147,22 +148,22 @@
                     "_circleProgress": {
                       "type": "object",
                       "required": false,
-                      "legend": "Page completion progress",
+                      "legend": "页面完成指示",
                       "properties": {
                         "_isEnabled": {
                           "type": "boolean",
                           "required": false,
                           "default": true,
-                          "title": "Enable Circle progress",
-                          "help": "Circle that fills as components on the page are completed",
+                          "title": "启用",
+                          "help": "当页面内容逐渐完成时，内容目录里的页面标题会有圆形进度条提示，圆圈表示已完成。",
                           "inputType": "Checkbox"
                         },
                         "_color": {
                           "type": "string",
                           "required": false,
                           "default": "#FFF",
-                          "title": "icon color",
-                          "help": "this attribute can be overriden by a custom handlebars file in the theme",
+                          "title": "图标颜色",
+                          "help": "图标颜色可以根据主题中的自定义颜色的编码来修改。",
                           "inputType": "Text"
                         }
                       }
@@ -172,14 +173,14 @@
                 "_progressBar": {
                   "type": "object",
                   "required": false,
-                  "legend": "Progress bar",
-                  "help": "Replaces the hamburger icon in navigation bar with a PLP bar",
+                  "legend": "进度条",
+                  "help": "将导航栏中的默认图标显示为进度条。",
                   "properties": {
                     "_isEnabled": {
                       "type": "boolean",
                       "required": false,
                       "default": false,
-                      "title": "Enable progress bar",
+                      "title": "启用",
                       "help": "",
                       "inputType": "Checkbox"
                     },
@@ -187,8 +188,8 @@
                       "type": "boolean",
                       "required": false,
                       "default": false,
-                      "title": "show percentage",
-                      "help": "A percentage of current completion appears next to bar",
+                      "title": "显示完成度百分比",
+                      "help": "当前页面完成情况的百分比会显示在进度条旁边。",
                       "inputType": "Checkbox"
                     }
                   }
@@ -196,15 +197,15 @@
                 "_menuNavigationView": {
                   "type": "object",
                   "required": false,
-                  "legend": "Menu progress bar",
-                  "help": "Shows PLP bar on menu. Tracks completed pages",
+                  "legend": "菜单进度条",
+                  "help": "在菜单上显示进度条，了解对应页面的完成情况。",
                   "properties": {
                     "_isEnabled": {
                       "type": "boolean",
                       "required": false,
                       "default": false,
-                      "title": "Enable menu progress bar",
-                      "help": "Works with show percentage",
+                      "title": "启用",
+                      "help": "显示菜单项对应的页面完成度百分比。",
                       "inputType": "Checkbox"
                     }
                   }
@@ -219,19 +220,19 @@
             "_contents": {
               "type": "object",
               "required": false,
-              "legend": "Contents",
+              "legend": "课程内容目录",
               "properties": {
                 "_isEnabled": {
                   "type": "boolean",
                   "required": true,
                   "default": true,
-                  "title": "Is enabled",
+                  "title": "启用",
                   "inputType": {
                     "type": "Boolean",
                     "options": [true, false]
                   },
                   "validators": [],
-                  "help": "If set to 'true', a progress bar will be displayed"
+                  "help": "启用后将显示进度条"
                 }
               }
             }
@@ -255,13 +256,13 @@
                   "type": "boolean",
                   "required": true,
                   "default": true,
-                  "title": "Is enabled",
+                  "title": "启用",
                   "inputType": {
                     "type": "Boolean",
                     "options": [true, false]
                   },
                   "validators": [],
-                  "help": "If set to 'true', this component will be tracked by Contents"
+                  "help": "启用后内容目录插件将跟踪当前组件。"
                 }
               }
             }
