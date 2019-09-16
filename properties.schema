@@ -72,7 +72,7 @@
                   "type": "boolean",
                   "required": false,
                   "default": true,
-                  "title": "默认打开",
+                  "title": "默认展开内容目录",
                   "help": "在电脑上，加载页面后默认开启课程内容目录。在手机页面上，则不开启。",
                   "inputType": "Checkbox"
                 },
@@ -109,7 +109,7 @@
                       "type": "boolean",
                       "required": false,
                       "default": true,
-                      "title": "引导页",
+                      "title": "启用引导页",
                       "help": "课件的第一个页面将作为课程引导介绍页。在内容目录中使用页面名称作为导航链接，只展示名称，不展示其包含的章节或组块。",
                       "inputType": "Checkbox"
                     },
@@ -139,7 +139,7 @@
                           "required": false,
                           "default": 0,
                           "title": "偏移高度",
-                          "help": "偏移高度，以便您可以看到其他东西。 建议零或负数",
+                          "help": "偏移高度，以便您可以看到其他东西。 建议0或负数",
                           "inputType": "Number",
                           "validators": ["number"]
                         }
