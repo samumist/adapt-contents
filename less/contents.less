@@ -272,7 +272,7 @@ button.contents-navigation.base {
     display:inline-block;
     .no-touch &:hover {
         .contents-progress-navigation-completion {
-            border-color: darken(@background-color, 15%);
+            border-color: @navigation-icon-color-hover;
         }
         .contents-progress-navigation-bar {
             background-color: darken(@primary-color, 10%);
@@ -290,7 +290,7 @@ button.contents-navigation.base {
     width: 100px;
     height: 8px;
     overflow: hidden;
-    border: 2px solid @background-color;
+    border: 2px solid @navigation-icon-color;
     position: relative;
     border-radius: 5px;
 
